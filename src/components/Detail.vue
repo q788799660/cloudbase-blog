@@ -95,7 +95,7 @@ export default {
 }
 .tag:hover {
   background: #dadb76;
-}
+} 
 .right {
   width: 300px;
 }

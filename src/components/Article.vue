@@ -39,13 +39,14 @@ export default {
     this.getContent();
   },
   methods: {
+    // 获取文章
     async getContent() {
       try {
+        // 掉用云函数
         await this.$cloudbase.callFunction({
           name: "getContent",
         }).then((data)=>{
           this.ArticleList = data.result.data;
-          console.log(data)
         }).catch((e)=>{
           this.ArticleList = e;
         });   
@@ -54,6 +55,7 @@ export default {
       }
     },
     readArticle(id){
+      // 跳转路由
       this.$router.push({
         path: `/detail/${id}`,
       })

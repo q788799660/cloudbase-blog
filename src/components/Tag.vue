@@ -35,8 +35,10 @@ export default {
     this.getTag();
   },
   methods:{
+    // 获取标签
     async getTag(){
       try {
+        // 调用云函数
         await this.$cloudbase.callFunction({
           name: "getContent",
         }).then((data)=>{
@@ -48,8 +50,10 @@ export default {
         this.TagList = e.message;
       }      
     },
+    // 根据标签内容进行查找文章
     searchArticleByTag(tag){
       try {
+        // 调用云函数
         this.$cloudbase.callFunction({
           name: "getTag",
           data: {
@@ -57,14 +61,11 @@ export default {
           }
         }).then((data)=>{
           this.ArticleList = data.result.data;
-          console.log(data)
         }).catch((e)=>{
           this.ArticleList = e;
-          console.log(e)
         });   
       } catch (e) {
         this.ArticleList = e.message;
-          console.log(e)
       } 
     }
   }

@@ -31,8 +31,10 @@ export default {
     }
   },
   methods: {
+    // 根据传递的id获取文章详情
     getArticleById(id){
       try {
+        // 掉用云函数
         this.$cloudbase.callFunction({
           name: "getArticle",
           data: {
@@ -40,7 +42,6 @@ export default {
           }
         }).then((data)=>{
           this.Article = data.result.data[0];
-          console.log(data.result.data[0])
         }).catch((e)=>{
           this.Article = e;
         });   
@@ -50,6 +51,7 @@ export default {
     }
   },
   created() {
+    // 获取通过路由传递的id
     let id = this.$route.params.id;
     this.getArticleById(id);
   }
@@ -95,7 +97,7 @@ export default {
 }
 .tag:hover {
   background: #dadb76;
-} 
+}
 .right {
   width: 300px;
 }

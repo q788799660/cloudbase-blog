@@ -1,0 +1,33 @@
+{
+  "envId": "photoprivate-3940ae",
+  "framework": {
+    "name": "vue",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-website",
+        "inputs": {
+          "buildCommand": "npm run build",
+          "outputPath": "dist",
+          "cloudPath": "/"
+        }
+      },
+      "server": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "cloudfunctions",
+          "functions": [
+            {
+              "name": "vue-echo",
+              "config": {
+                "timeout": 5,
+                "envVariables": {},
+                "runtime": "Nodejs10.15",
+                "memorySize": 128
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -104,9 +104,10 @@ li {
 }
 .title {
   font-size: 26px;
+  color: #cefffa;
 }
 .title:hover {
-  color: rgb(56, 183, 234);
+  color: #87dfd6;
 }
 .content {
   max-height: 200px;
@@ -116,9 +117,10 @@ li {
   -webkit-box-orient:vertical;
   -webkit-line-clamp:4;
   margin: 20px;
+  color: #9afdf3;
 }
 .time {
-  color: #888;
+  color: white;
 }
 
 </style>

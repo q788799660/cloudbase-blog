@@ -79,22 +79,22 @@ export default {
 }
 .content {
   width: 800px;
-  margin: 30px 50px;
+  padding: 30px 50px;
 }
 .time {
-  color: #888;
+  color: white;
 }
 .tag {
-  background: rgb(189, 19, 211);
+  background: #fbfd8a;
   padding: 10px;
   margin: 10px;
   border-radius: 40%;
   font-size: 12px;
-  color: white;
+  color: black;
   user-select: none;
 }
 .tag:hover {
-  background: rgb(173, 13, 194);
+  background: #dadb76;
 }
 .right {
   width: 300px;
